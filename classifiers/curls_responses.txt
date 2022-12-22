@@ -1,0 +1,22 @@
+Тесты
+
+1.
+curl --location --request GET 'localhost:5000/api/predict?r=255&g=38&b=0'
+
+Ответ:
+200
+[-1]
+
+2.
+curl --location --request GET 'localhost:5000/api/predict?r=20&g=38&b=100'
+
+Ответ: 
+200
+[1]
+
+3.
+curl --location --request GET 'localhost:5000/api/predict?r=20&g=38&b=300'
+
+Ответ:
+400
+{"message":"color range must be within [0, 255]"}
